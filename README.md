@@ -1,6 +1,6 @@
 # Monit - UNIX Systems Management
 
-Run Monit inside docker.
+Run Monit inside docker with Telegram notification support.
 
 [![Monit](https://mmonit.com/monit/img/logo.png)](https://mmonit.com/monit/)
 
