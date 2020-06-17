@@ -26,13 +26,15 @@ Docker documentation: https://docs.docker.com/
 
 - start monit: `docker run -d --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
 
+- or use `docker-compose`
+
 ### Monit2Telegram setup
 
 - Configure API token and channel id in telegramrc
 
-- Test Telegram with `sendtelegram -c /etc/telegramrc -m "Hello from the other side!"`
+- Test Telegram with `docker exec monit sendtelegram -c /etc/telegramrc -m "Hello from the other side!"`
 
-- Add to alert with `exec` statement
+- Add to checks with `exec` statement
 
 ```
 check file nginx.pid with path /var/run/nginx.pid
