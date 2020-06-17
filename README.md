@@ -41,4 +41,4 @@ check file nginx.pid with path /var/run/nginx.pid
 
 If when starting Monit returns the following message: `The control file '/etc/monitrc' permission 0755 is wrong, maximum 0700 allowed`, simply give the appropriate permissions to _monitrc_: `chmod 700 monitrc`.
 
-If when starting Monit returns the following message: `The control file '/etc/monitrc' must be owned by you.`, simply give ownership of _monitrc_ to the docker user: `chown root:root monitrc`.
+If when starting Monit returns the following message: `The control file '/etc/monitrc' must be owned by you`, simply give ownership of _monitrc_ to the docker user: `chown root:root monitrc`.
