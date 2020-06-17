@@ -20,13 +20,7 @@ Docker documentation: https://docs.docker.com/
 
 - build docker image `docker build -t monit .`
 
-- start monit: `docker run -ti -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc monit`
-
-### Docker compose
-
-- create a container using docker-compose: `docker-compose up --no-start`
-
-- start monit: `docker-compose up`
+- start monit: `docker run --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
 
 ### Troubleshooting
 
