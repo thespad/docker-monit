@@ -22,12 +22,6 @@ Docker documentation: https://docs.docker.com/
 
 - start monit: `docker run --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
 
-### Docker compose
-
-- create a container using docker-compose: `docker-compose up --no-start`
-
-- start monit: `docker-compose up`
-
 ### Troubleshooting
 
 If when starting Monit returns the following message: `The control file '/etc/monitrc' permission 0755 is wrong, maximum 0700 allowed`, simply give the appropriate permissions to _monitrc_: `chmod 700 monitrc`.
