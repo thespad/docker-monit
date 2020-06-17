@@ -1,8 +1,13 @@
-version: '3'
+ersion: "3.2"
+
 services:
   monit:
-    image: "kijart/monit"
+    image: monit
+    container_name: monit
     ports:
-      - 2812:2812
+      - "2812:2812"
     volumes:
       - ./monitrc:/etc/monitrc
+      - ./telegramrc:/etc/telegramrc
+    restart: unless-stopped
+
