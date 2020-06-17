@@ -1,11 +1,11 @@
-ersion: "3.2"
+version: "3.2"
 
 services:
   monit:
-    image: monit
+    build: .
     container_name: monit
     ports:
-      - "2812:2812"
+      - "80:2812"
     volumes:
       - ./monitrc:/etc/monitrc
       - ./telegramrc:/etc/telegramrc
