@@ -22,22 +22,6 @@ Docker documentation: https://docs.docker.com/
 
 - start monit: `docker run -ti -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc monit`
 
-### Docker Hub image
-
-- pull docker image from docker hub: `docker pull kijart/monit`
-
-- start monit: `docker run -ti -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc kijart/monit`
-
-- create a docker container:
-
-```bash
-docker create \
-  --name=monit \
-  -p 2812:2812 \
-  -v $(pwd)/monitrc:/etc/monitrc \
-  kijart/monit
-```
-
 ### Docker compose
 
 - create a container using docker-compose: `docker-compose up --no-start`
