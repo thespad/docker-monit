@@ -1,10 +1,12 @@
 # Monit - UNIX Systems Management
 
-Run Monit inside docker.
+Run Monit inside docker with Telegram notification support.
 
 [![Monit](https://mmonit.com/monit/img/logo.png)](https://mmonit.com/monit/)
 
 [Monit](https://mmonit.com/monit/) is a free open source utility for managing and monitoring, processes, programs, files, directories and filesystems on a UNIX system. Monit conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.
+
+[Monit2Telegram](https://github.com/matriphe/monit2telegram/) is a script that allows monit output to be sent via the Telegram bot API for notifications.
 
 Default username/password: admin/monit
 
