@@ -5,9 +5,9 @@ services:
     build: .
     container_name: monit
     ports:
-      - "80:2812"
+      - 2812:2812
     volumes:
       - ./monitrc:/etc/monitrc
       - ./telegramrc:/etc/telegramrc
     restart: unless-stopped
-
+    user: abc:users
