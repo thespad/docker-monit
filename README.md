@@ -31,7 +31,7 @@ Docker documentation: https://docs.docker.com/
 
 - start monit: `docker run -d --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
 
-- or use `docker-compose`
+- or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml)
 
 ### Monit2Telegram setup
 
