@@ -22,11 +22,16 @@ Docker documentation: https://docs.docker.com/
 
 - clone repo
 
+- Change GID and UID in Dockerfile to whatever user/group you want to run Monit as:
+```
+    groupmod -g 1000 users && \
+    useradd -u 1000 -U -d /config -s /bin/false abc && \
+```
 - build docker image `docker build -t monit .`
 
 - start monit: `docker run -d --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
 
-- or use `docker-compose`
+- or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml)
 
 ### Monit2Telegram setup
 
@@ -45,4 +50,4 @@ check file nginx.pid with path /var/run/nginx.pid
 
 If when starting Monit returns the following message: `The control file '/etc/monitrc' permission 0755 is wrong, maximum 0700 allowed`, simply give the appropriate permissions to _monitrc_: `chmod 700 monitrc`.
 
-If when starting Monit returns the following message: `The control file '/etc/monitrc' must be owned by you`, simply give ownership of _monitrc_ to the docker user: `chown root:root monitrc`.
+If when starting Monit returns the following message: `The control file '/etc/monitrc' must be owned by you`, simply give ownership of _monitrc_ to the docker user: `chown <user>:<group> monitrc`.
