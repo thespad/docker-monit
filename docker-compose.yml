@@ -3,7 +3,9 @@ version: "3.2"
 services:
   monit:
     build: .
+    image: monit
     container_name: monit
+    hostname: monit
     ports:
       - 2812:2812
     volumes:
