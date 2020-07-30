@@ -3,7 +3,7 @@ FROM alpine:latest
 LABEL maintainer="Adam Beardwood"
 
 # monit environment variables
-ENV MONIT2TELEGRAM_URL=https://github.com/TheSpad/monit2telegram.git
+ARG MONIT2TELEGRAM_URL=https://github.com/TheSpad/monit2telegram.git
 
 # Compile and install monit + monit2telegram
 RUN \
