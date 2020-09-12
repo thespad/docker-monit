@@ -37,7 +37,7 @@ Docker documentation: https://docs.docker.com/
 
 - Configure API token and channel id in telegramrc
 
-- Test Telegram with `docker exec monit sendtelegram -c /etc/telegramrc -m "Hello from the other side!"`
+- Test Telegram with `docker-compose run monit sendtelegram -c /etc/telegramrc -m "Hello from the other side\!"`
 
 - Add to checks with `exec` statement
 
