@@ -1,4 +1,4 @@
-version: "3.2"
+version: "2"
 
 services:
   monit:
@@ -6,6 +6,11 @@ services:
     image: monit
     container_name: monit
     hostname: monit
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
     ports:
       - 2812:2812
     volumes:
