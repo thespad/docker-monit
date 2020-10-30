@@ -8,7 +8,7 @@ ARG MONIT2TELEGRAM_URL=https://github.com/TheSpad/monit2telegram.git
 # Compile and install monit + monit2telegram
 RUN \
     echo "*** install monit and dependencies ***" && \
-    apk add --update monit git bash curl shadow && \
+    apk add --update --no-cache monit git bash curl shadow && \
     mkdir -p /opt/src; cd /opt/src && \
     echo "*** install monit2telegram ***" && \
     mkdir -p /opt/src/git; cd /opt/src/git && \
@@ -19,7 +19,7 @@ RUN \
     cp monit2telegram.sh /usr/local/bin/monit2telegram && \
     chmod +x /usr/local/bin/monit2telegram && \
     apk del gcc musl-dev make libressl-dev file zlib-dev && \
-    rm -rf /var/cache/apk/* /opt/src
+    rm -rf /opt/src
 
 RUN \
     echo "**** create abc user and make our folders ****" && \
