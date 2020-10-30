@@ -18,7 +18,6 @@ RUN \
     chmod +x /usr/local/bin/sendtelegram && \
     cp monit2telegram.sh /usr/local/bin/monit2telegram && \
     chmod +x /usr/local/bin/monit2telegram && \
-    apk del gcc musl-dev make libressl-dev file zlib-dev && \
     rm -rf /opt/src
 
 RUN \
