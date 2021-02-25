@@ -1,5 +1,9 @@
 #!/usr/bin/with-contenv bash
 
+if [ ! -f "/config/monitrc" ]; then
+	cp /defaults/monitrc /config/monitrc
+fi
+
 # set permissions
 chown abc:abc \
 	/etc/monitrc
