@@ -11,10 +11,13 @@ services:
       options:
         max-size: "10m"
         max-file: "5"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TGTOKEN=${TGTOKEN}
+      - TGCHATID=${TGCHATID}
     ports:
       - 2812:2812
     volumes:
       - ./monitrc:/etc/monitrc
-      - ./telegramrc:/etc/telegramrc
     restart: unless-stopped
-    user: abc:users
