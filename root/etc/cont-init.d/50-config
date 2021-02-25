@@ -6,7 +6,7 @@ fi
 
 # set permissions
 chown abc:abc \
-	/etc/monitrc
+	/config/monitrc
 
 chmod 700 \
-    /etc/monitrc
+	/config/monitrc
