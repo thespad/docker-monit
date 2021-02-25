@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+# set permissions
+chown abc:abc \
+	/etc/monitrc
+
+chmod 700 \
+    /etc/monitrc
