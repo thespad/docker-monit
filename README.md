@@ -18,7 +18,7 @@ Install docker compose: https://docs.docker.com/compose/install/
 
 Docker documentation: https://docs.docker.com/
 
-### Build-in docker image
+### Build docker image
 
 - clone repo
 
