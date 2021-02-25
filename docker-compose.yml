@@ -19,5 +19,5 @@ services:
     ports:
       - 2812:2812
     volumes:
-      - ./monitrc:/etc/monitrc
+      - ./config:/config
     restart: unless-stopped
