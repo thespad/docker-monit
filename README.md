@@ -22,22 +22,17 @@ Docker documentation: https://docs.docker.com/
 
 - clone repo
 
-- Change GID and UID in Dockerfile to whatever user/group you want to run Monit as:
-```
-    groupmod -g 1000 users && \
-    useradd -u 1000 -U -d /config -s /bin/false abc && \
-```
 - build docker image `docker build -t monit .`
 
-- start monit: `docker run -d --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -v $(pwd)/telegramrc:/etc/telegramrc monit`
+- start monit: `docker run -d --name=monit -p 2812:2812 -v $(pwd)/monitrc:/etc/monitrc -e PUID=1000 -e PGID 1000 -e TGTOKEN=<telegram API token> -e TGCHATIT=<telegram chat ID> local/monit`
 
 - or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml)
 
 ### Monit2Telegram setup
 
-- Configure API token and channel id in telegramrc
+- Configure API token and channel id in environment variables
 
-- Test Telegram with `docker-compose run monit sendtelegram -c /etc/telegramrc -m "Hello from the other side\!"`
+- Test Telegram with `docker-compose run monit sendtelegram -m "Hello from the other side\!"`
 
 - Add to checks with `exec` statement
 
@@ -45,9 +40,3 @@ Docker documentation: https://docs.docker.com/
 check file nginx.pid with path /var/run/nginx.pid
     if changed pid then exec "/usr/local/bin/monit2telegram"
 ```
-
-### Troubleshooting
-
-If when starting Monit returns the following message: `The control file '/etc/monitrc' permission 0755 is wrong, maximum 0700 allowed`, simply give the appropriate permissions to _monitrc_: `chmod 700 monitrc`.
-
-If when starting Monit returns the following message: `The control file '/etc/monitrc' must be owned by you`, simply give ownership of _monitrc_ to the docker user: `chown <user>:<group> monitrc`.
