@@ -21,6 +21,8 @@ Docker documentation: https://docs.docker.com/
 ### Pull docker image
 
 `docker pull thespad/docker-monit:latest`
+or
+`docker pull ghcr.io/thespad/docker-monit:latest`
 
 ### Build docker image locally
 
