@@ -18,7 +18,11 @@ Install docker compose: https://docs.docker.com/compose/install/
 
 Docker documentation: https://docs.docker.com/
 
-### Build docker image
+### Pull docker image
+
+`docker pull thespad/docker-monit:latest`
+
+### Build docker image locally
 
 - clone repo
 
