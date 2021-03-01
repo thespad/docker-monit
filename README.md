@@ -24,13 +24,13 @@ Docker documentation: https://docs.docker.com/
 or
 `docker pull ghcr.io/thespad/docker-monit:latest`
 
-### Build docker image locally
+### Or build docker image locally
 
 - clone repo
 
 - build docker image `docker build -t monit .`
 
-### Start monit
+### Then start monit
 `docker run -d --name=monit -p 2812:2812 -v $(pwd)/config:/config -e PUID=1000 -e PGID 1000 -e TGTOKEN=<telegram API token> -e TGCHATID=<telegram chat ID> local/monit`
 
 - or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml)
