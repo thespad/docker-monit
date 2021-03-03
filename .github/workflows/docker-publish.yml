@@ -47,10 +47,10 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           tags: |
-            docker.io/thespad/docker-monit:${{ steps.prep.outputs.VERSION }}
-            docker.io/thespad/docker-monit:latest
-            ghcr.io/thespad/docker-monit:${{ steps.prep.outputs.VERSION }}
-            ghcr.io/thespad/docker-monit:latest
+            docker.io/thespad/monit:${{ steps.prep.outputs.VERSION }}
+            docker.io/thespad/monit:latest
+            ghcr.io/thespad/monit:${{ steps.prep.outputs.VERSION }}
+            ghcr.io/thespad/monit:latest
           labels: |
             org.opencontainers.image.title=${{ github.event.repository.name }}
             org.opencontainers.image.description=${{ github.event.repository.description }}
