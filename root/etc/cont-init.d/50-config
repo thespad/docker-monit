@@ -1,12 +1,27 @@
 #!/usr/bin/with-contenv bash
 
+#Copy defaults
 if [ ! -f "/config/monitrc" ]; then
 	cp /defaults/monitrc /config/monitrc
 fi
 
+if [ ! -f "/config/sendtelegram.sh" ]; then
+	cp /defaults/sendtelegram.sh /config/sendtelegram.sh
+fi
+
+if [ ! -f "/config/monit2telegram.sh" ]; then
+	cp /defaults/monit2telegram.sh /config/monit2telegram.sh
+fi
+
+#symlinks for backwards compat
+ln -s /config/sendtelegram.sh /usr/local/bin/sendtelegram.sh
+ln -s /config/monit2telegram.sh /usr/local/bin/monit2telegram.sh
+
 # set permissions
-chown abc:abc \
-	/config/monitrc
+chown -R abc:abc \
+	/config
 
 chmod 700 \
 	/config/monitrc
+	/config/sendtelegram.sh
+	/config/monit2telegram.sh
