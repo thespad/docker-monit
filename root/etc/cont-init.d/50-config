@@ -5,17 +5,25 @@ if [ ! -f "/config/monitrc" ]; then
 	cp /defaults/monitrc /config/monitrc
 fi
 
-if [ ! -f "/config/sendtelegram.sh" ]; then
-	cp /defaults/sendtelegram.sh /config/sendtelegram.sh
+if [ ! -f "/config/sendtelegram" ]; then
+	cp /defaults/sendtelegram /config/sendtelegram
 fi
 
-if [ ! -f "/config/monit2telegram.sh" ]; then
-	cp /defaults/monit2telegram.sh /config/monit2telegram.sh
+if [ ! -f "/config/monit2telegram" ]; then
+	cp /defaults/monit2telegram /config/monit2telegram
 fi
+
+# if [ ! -f "/config/telegramrc" ]; then
+# 	cp /defaults/telegramrc /config/telegramrc
+# fi
+
+# if [[ -n "$TGTOKEN" ]] && [[ -n "$TGCHATID" ]]; then
+# 	printf "TOKEN=$TGTOKEN\nCHATID=$TGCHATID" > /config/telegramrc
+# fi
 
 #symlinks for backwards compat
-ln -s /config/sendtelegram.sh /usr/local/bin/sendtelegram.sh
-ln -s /config/monit2telegram.sh /usr/local/bin/monit2telegram.sh
+ln -s /config/sendtelegram /usr/local/bin/sendtelegram
+ln -s /config/monit2telegram /usr/local/bin/monit2telegram
 
 # set permissions
 chown -R abc:abc \
@@ -23,5 +31,5 @@ chown -R abc:abc \
 
 chmod 700 \
 	/config/monitrc
-	/config/sendtelegram.sh
-	/config/monit2telegram.sh
+	/config/sendtelegram
+	/config/monit2telegram
