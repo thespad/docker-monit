@@ -2,8 +2,6 @@ FROM ghcr.io/linuxserver/baseimage-alpine:3.13
 
 LABEL maintainer="Adam Beardwood"
 
-ARG MONIT2TELEGRAM_URL=https://github.com/TheSpad/monit2telegram.git
-
 RUN \
  echo "**** install packages ****" && \
  apk add --update --no-cache  \
