@@ -15,8 +15,13 @@ if [ ! -f "/config/monit2telegram" ]; then
 fi
 
 #symlinks for backwards compat
-ln -s /config/sendtelegram /usr/local/bin/sendtelegram
-ln -s /config/monit2telegram /usr/local/bin/monit2telegram
+if [ ! -L "/usr/local/bin/sendtelegram" ]; then
+	ln -s /config/sendtelegram /usr/local/bin/sendtelegram
+fi
+
+if [ ! -L "/usr/local/bin/monit2telegram" ]; then
+	ln -s /config/monit2telegram /usr/local/bin/monit2telegram
+fi
 
 # set permissions
 chown -R abc:abc \
