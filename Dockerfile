@@ -7,12 +7,12 @@ ARG MONIT2TELEGRAM_URL=https://github.com/TheSpad/monit2telegram.git
 RUN \
  echo "**** install packages ****" && \
  apk add --update --no-cache  \
-            monit \
             git \
             bash \
             curl \
             shadow \
             jq && \
+ apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit
  mkdir -p /opt/src; cd /opt/src && \
  echo "*** install monit2telegram ***" && \
  mkdir -p /opt/src/git; cd /opt/src/git && \
