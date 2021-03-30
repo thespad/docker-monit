@@ -14,14 +14,6 @@ if [ ! -f "/config/monit2telegram" ]; then
 	cp -a /defaults/monit2telegram /config/monit2telegram
 fi
 
-# if [ ! -f "/config/telegramrc" ]; then
-# 	cp /defaults/telegramrc /config/telegramrc
-# fi
-
-# if [[ -n "$TGTOKEN" ]] && [[ -n "$TGCHATID" ]]; then
-# 	printf "TOKEN=$TGTOKEN\nCHATID=$TGCHATID" > /config/telegramrc
-# fi
-
 #symlinks for backwards compat
 ln -s /config/sendtelegram /usr/local/bin/sendtelegram
 ln -s /config/monit2telegram /usr/local/bin/monit2telegram

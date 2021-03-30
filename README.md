@@ -33,7 +33,7 @@ or
 ### Then start monit
 `docker run -d --name=monit -p 2812:2812 -v $(pwd)/config:/config -e PUID=1000 -e PGID 1000 -e TGTOKEN=<telegram API token> -e TGCHATID=<telegram chat ID> local/monit`
 
-- or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml)
+- or use [docker-compose](https://github.com/TheSpad/docker-monit/blob/develop/docker-compose.yml.sample)
 
 ### Monit2Telegram setup
 
@@ -45,5 +45,5 @@ or
 
 ```
 check file nginx.pid with path /var/run/nginx.pid
-    if changed pid then exec "/usr/local/bin/monit2telegram"
+    if changed pid then exec "/config/monit2telegram"
 ```
