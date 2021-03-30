@@ -11,8 +11,7 @@ RUN \
             curl \
             shadow \
             jq && \
- apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit && \
- mkdir /config
+ apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit
 
 # copy local files
 COPY root/ /
