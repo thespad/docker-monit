@@ -6,7 +6,7 @@ Run Monit inside docker with Telegram notification support.
 
 [Monit](https://mmonit.com/monit/) is a free open source utility for managing and monitoring, processes, programs, files, directories and filesystems on a UNIX system. Monit conducts automatic maintenance and repair and can execute meaningful causal actions in error situations.
 
-[Monit2Telegram](https://github.com/TheSpad/monit2telegram) is a script that allows monit output to be sent via the Telegram bot API for notifications.
+Monit2Telegram is a script that allows monit output to be sent via the Telegram bot API for notifications.
 
 Default username/password: admin/monit
 
@@ -28,7 +28,7 @@ or
 
 - clone repo
 
-- build docker image `docker build -t monit .`
+- build docker image `docker build -t local/monit .`
 
 ### Then start monit
 `docker run -d --name=monit -p 2812:2812 -v $(pwd)/config:/config -e PUID=1000 -e PGID 1000 -e TGTOKEN=<telegram API token> -e TGCHATID=<telegram chat ID> local/monit`
