@@ -2,15 +2,16 @@
 
 #Copy defaults
 if [ ! -f "/config/monitrc" ]; then
-	cp /defaults/monitrc /config/monitrc
+	cp -a /defaults/monitrc /config/monitrc
 fi
 
 if [ ! -f "/config/sendtelegram" ]; then
-	cp /defaults/sendtelegram /config/sendtelegram
+	cp -a /defaults/sendtelegram /config/sendtelegram
+	echo "Copying sendtelegram"
 fi
 
 if [ ! -f "/config/monit2telegram" ]; then
-	cp /defaults/monit2telegram /config/monit2telegram
+	cp -a /defaults/monit2telegram /config/monit2telegram
 fi
 
 # if [ ! -f "/config/telegramrc" ]; then
@@ -30,6 +31,6 @@ chown -R abc:abc \
 	/config
 
 chmod 700 \
-	/config/monitrc
-	/config/sendtelegram
+	/config/monitrc \
+	/config/sendtelegram \
 	/config/monit2telegram
