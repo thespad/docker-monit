@@ -7,7 +7,6 @@ fi
 
 if [ ! -f "/config/sendtelegram" ]; then
 	cp -a /defaults/sendtelegram /config/sendtelegram
-	echo "Copying sendtelegram"
 fi
 
 if [ ! -f "/config/monit2telegram" ]; then
