@@ -28,6 +28,7 @@ jobs:
             org.opencontainers.image.title=monit
             org.opencontainers.image.description=monit
             org.opencontainers.image.vendor=TheSpad
+            org.opencontainers.image.source=https://github.com/TheSpad/docker-monit
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
