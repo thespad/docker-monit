@@ -5,21 +5,8 @@ if [ ! -f "/config/monitrc" ]; then
 	cp -a /defaults/monitrc /config/monitrc
 fi
 
-if [ ! -f "/config/sendtelegram" ]; then
-	cp -a /defaults/sendtelegram /config/sendtelegram
-fi
-
-if [ ! -f "/config/monit2telegram" ]; then
-	cp -a /defaults/monit2telegram /config/monit2telegram
-fi
-
-#symlinks for backwards compat
-if [ ! -L "/usr/local/bin/sendtelegram" ]; then
-	ln -s /config/sendtelegram /usr/local/bin/sendtelegram
-fi
-
-if [ ! -L "/usr/local/bin/monit2telegram" ]; then
-	ln -s /config/monit2telegram /usr/local/bin/monit2telegram
+if [ ! -f "/config/monit2apprise" ]; then
+	cp -a /defaults/monit2apprise /config/monit2apprise
 fi
 
 # set permissions
@@ -27,6 +14,5 @@ chown -R abc:abc \
 	/config
 
 chmod 700 \
-	/config/monitrc \
-	/config/sendtelegram \
-	/config/monit2telegram
+	/config/monitrc
+	/config/monit2apprise

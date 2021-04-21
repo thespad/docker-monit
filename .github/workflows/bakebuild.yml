@@ -19,12 +19,12 @@ jobs:
       -  
         name: Docker meta
         id: docker_meta
-        uses: crazy-max/ghaction-docker-meta@v1
+        uses: crazy-max/ghaction-docker-meta@v2.3.0
         with:
           images: |
             ${{ env.DOCKERHUB_SLUG }}
             ${{ env.GHCR_SLUG }}
-          label-custom: |
+          labels: |
             org.opencontainers.image.title=monit
             org.opencontainers.image.description=monit
             org.opencontainers.image.vendor=TheSpad

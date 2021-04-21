@@ -1,3 +1,0 @@
-#!/bin/bash
-
-/config/sendtelegram -m "Monit $MONIT_SERVICE - $MONIT_EVENT at $MONIT_DATE on $MONIT_HOST: $MONIT_ACTION $MONIT_DESCRIPTION."
