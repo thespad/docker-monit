@@ -1,6 +1,7 @@
 FROM ghcr.io/linuxserver/baseimage-alpine:3.13
 
 LABEL maintainer="Adam Beardwood"
+LABEL org.opencontainers.image.source=https://github.com/TheSpad/docker-monit
 
 RUN \
   echo "**** install packages ****" && \
