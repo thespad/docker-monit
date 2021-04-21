@@ -19,7 +19,7 @@ RUN \
   mkdir -p /tmp/wheels && \
   curl -s -o \
     /tmp/cryptography.tar.gz -L \
-    "https://github.com/TheSpad/docker-monit/raw/apprise/wheels/cryptography.tar.gz" && \
+    "https://github.com/TheSpad/docker-monit/raw/main/wheels/cryptography.tar.gz" && \
   tar xf \
     /tmp/cryptography.tar.gz -C \
     /tmp/wheels/ --strip-components=1 && \
