@@ -27,7 +27,9 @@ RUN \
   pip install --find-links=/tmp/wheels apprise && \
   apk del --purge \
     build-dependencies && \
-  rm -rf /tmp/wheels
+  rm -rf /tmp/wheels && \
+  rm /tmp/cryptography.tar.gz && \
+  rm -rf ~/.cache/
 
 COPY root/ /
 
