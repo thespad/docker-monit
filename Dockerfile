@@ -11,12 +11,12 @@ RUN \
     python3-dev \
     libffi-dev \
     openssl-dev && \
-  apk add --update --no-cache  \
+  apk add -U --upgrade --no-cache  \
     bash \
     curl \
     python3 \
     py3-pip && \
-  apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit && \
+  apk add -U --upgrade --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit && \
   mkdir -p /tmp/wheels && \
   curl -s -o \
     /tmp/cryptography.tar.gz -L \
@@ -28,9 +28,9 @@ RUN \
   pip install --find-links=/tmp/wheels apprise && \
   apk del --purge \
     build-dependencies && \
-  rm -rf /tmp/wheels && \
-  rm /tmp/cryptography.tar.gz && \
-  rm -rf ~/.cache/
+  rm -rf \
+    /tmp/* \
+    /root/.cache
 
 COPY root/ /
 
