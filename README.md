@@ -34,9 +34,9 @@ The architectures supported by this image are:
 
 Webui is accessible at http://SERVERIP:PORT
 
-Edit /config/monitrc to add services to monitor. Use `then exec "/config/monit2apprise"` to send alerts via configured apprise targets.
+Edit `/config/monitrc` to add services to monitor. Use `then exec "/config/monit2apprise.sh"` to send alerts via configured apprise targets.
 
-Edit /config/monit2apprise to customise the alert message.
+Edit `/config/monit2apprise.sh` to customise the alert message.
 
 More info at [monit](https://mmonit.com/monit/).
 

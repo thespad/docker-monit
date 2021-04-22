@@ -5,14 +5,16 @@ if [ ! -f "/config/monitrc" ]; then
 	cp -a /defaults/monitrc /config/monitrc
 fi
 
-if [ ! -f "/config/monit2apprise" ]; then
-	cp -a /defaults/monit2apprise /config/monit2apprise
+if [ ! -f "/config/monit2apprise.sh" ]; then
+	cp -a /defaults/monit2apprise.sh /config/monit2apprise.sh
 fi
 
 # set permissions
-chown -R abc:abc \
-	/config
-
 chmod 700 \
 	/config/monitrc
-	/config/monit2apprise
+
+chmod +x \
+	/config/monit2apprise.sh
+
+chown -R abc:abc \
+	/config
