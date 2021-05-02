@@ -24,8 +24,9 @@ RUN \
   tar xf \
     /tmp/cryptography.tar.gz -C \
     /tmp/wheels/ --strip-components=1 && \
-  pip install wheel && \
-  pip install --find-links=/tmp/wheels apprise && \
+  pip install --no-cache-dir --upgrade \
+    wheel && \
+  pip install --no-cache-dir --upgrade --find-links=/tmp/wheels apprise && \
   apk del --purge \
     build-dependencies && \
   rm -rf \
