@@ -17,16 +17,9 @@ RUN \
     python3 \
     py3-pip && \
   apk add -U --upgrade --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit && \
-  mkdir -p /tmp/wheels && \
-  curl -s -o \
-    /tmp/cryptography.tar.gz -L \
-    "https://github.com/TheSpad/docker-monit/raw/main/wheels/cryptography.tar.gz" && \
-  tar xf \
-    /tmp/cryptography.tar.gz -C \
-    /tmp/wheels/ --strip-components=1 && \
   pip install --no-cache-dir --upgrade \
     wheel && \
-  pip install --no-cache-dir --upgrade --find-links=/tmp/wheels apprise && \
+  pip install --no-cache-dir --upgrade --find-links https://wheel-index.linuxserver.io/alpine-3.13/ apprise && \
   apk del --purge \
     build-dependencies && \
   rm -rf \
