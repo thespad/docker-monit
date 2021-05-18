@@ -89,7 +89,7 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 1935` | Web GUI |
+| `-p 2812` | Web GUI |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=America/New_York` | Specify a timezone to use EG America/New_York |
