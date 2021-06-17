@@ -172,5 +172,6 @@ docker build \
 
 ## Versions
 
+* **17.06.21:** - Rebase to Alpine 3.14
 * **21.04.21:** - Add apprise support.
 * **17.06.20:** - Initial Release.
