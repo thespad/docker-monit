@@ -17,7 +17,8 @@ RUN \
     python3 \
     py3-pip && \
   apk add -U --upgrade --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ monit && \
-  pip install --no-cache-dir --upgrade --find-links https://wheel-index.linuxserver.io/alpine/ apprise && \
+  pip install -U --no-cache-dir wheel && \
+  pip install -U --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine/ apprise && \
   apk del --purge \
     build-dependencies && \
   rm -rf \
