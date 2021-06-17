@@ -5,6 +5,9 @@ on:
     tags: 
       - 'v*'
       - 'update-base'
+  pull_request:
+    branches:
+      - 'master'      
 
 env:
   DOCKERHUB_SLUG: thespad/monit
