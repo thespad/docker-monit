@@ -52,7 +52,7 @@ jobs:
             | jq -r '.config')
 
           IMAGE_RELEASE=$(echo ${image_info} | jq -r '.Labels."org.opencontainers.image.version"')
-          IMAGE_VERSION=$(echo ${IMAGE_RELEASE} | awk -F'-spad' '{print $1}' | cut -d 'v' -f 2)
+          IMAGE_VERSION=$(echo ${IMAGE_RELEASE} | awk -F'-spad' '{print $1}')
 
           if [ -z "${IMAGE_VERSION}" ]; then
             echo "**** Can't retrieve last pushed version, exiting ****"
@@ -72,7 +72,7 @@ jobs:
           IMAGE_RELEASE=${EXT_RELEASE}
           echo ::set-output name=image_release::${IMAGE_RELEASE}
 
-          echo ::set-output name=image_release::${APP_NAME}
+          echo ::set-output name=app_name::${APP_NAME}
 
   release:
     runs-on: ubuntu-latest
@@ -85,6 +85,6 @@ jobs:
       - name: Do release
         uses: softprops/action-gh-release@v1
         with:
-          body: "* Updated ${{ needs.check.outputs.app_name }} to v${{ needs.check.outputs.image_release }}"
+          body: "* Updated ${{ needs.check.outputs.app_name }} to ${{ needs.check.outputs.image_release }}"
           token: ${{ secrets.REPO_SCOPED_TOKEN }}
-          tag_name: v${{ needs.check.outputs.image_release }}-spad001
+          tag_name: ${{ needs.check.outputs.image_release }}-spad001
