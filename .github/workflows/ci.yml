@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       APP_NAME: monit
-      RELEASE_CHECK: $(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && awk "/^P:"monit"$/,/V:/" /tmp/APKINDEX | sed -n 2p | sed "s/^V://");
     outputs:
       image_release: ${{ steps.build_check.outputs.image_release }}
       update_available: ${{ steps.build_check.outputs.update_available }}
@@ -21,7 +20,7 @@ jobs:
         id: build_check
         run: |
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=${RELEASE_CHECK}
+          EXT_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/edge/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && awk '/^P:'"monit"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
             exit 1
