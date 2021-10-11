@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       APP_NAME: monit
-      RELEASE_TYPE: alpine_edge
+      RELEASE_TYPE: alpine
       RELEASE_REPO: "edge/main"
       RELEASE_URL: monit
     outputs:
@@ -28,7 +28,6 @@ jobs:
               EXT_RELEASE=$(curl -sX GET ${RELEASE_URL} | awk '/tag_name/{print $4;exit}' FS='[""]');
               ;;
             alpine)
-              echo "http://dl-cdn.alpinelinux.org/alpine/${RELEASE_REPO}/x86_64/APKINDEX.tar.gz"
               EXT_RELEASE=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/${RELEASE_REPO}/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp && awk '/^P:'"${RELEASE_URL}"'$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://');
               ;;
           esac      
