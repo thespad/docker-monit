@@ -1,4 +1,4 @@
-FROM lscr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.14
 
 LABEL maintainer="Adam Beardwood"
 LABEL org.opencontainers.image.source=https://github.com/TheSpad/docker-monit
