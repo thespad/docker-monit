@@ -1,0 +1,17 @@
+name: Check for update and release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '0 13 * * *'
+
+jobs:
+  call-workflow:
+    uses: thespad/actions/.github/workflows/ci.yml@main
+    with:
+      app_name: "monit"
+      release_type: "alpine"
+      release_repo: "edge/main"
+      release_url: "monit"
+    secrets:
+      repo_scoped_token: ${{ secrets.repo_scoped_token }}
