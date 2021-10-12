@@ -17,4 +17,3 @@ jobs:
       dockerhub_user: thespad
     secrets:
       dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
-      ghcr_token: ${{ secrets.GHCR_PAT }}
