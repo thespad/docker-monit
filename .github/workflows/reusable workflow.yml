@@ -9,6 +9,7 @@ jobs:
   call-workflow:
     uses: thespad/actions/.github/workflows/ci.yml@main
     with:
+      repo_owner: ${{ github.repository_owner }}
       app_name: "monit"
       release_type: "alpine"
       release_repo: "edge/main"
