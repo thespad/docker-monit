@@ -11,7 +11,8 @@ RUN \
     python3-dev \
     py3-wheel \
     libffi-dev \
-    openssl-dev && \
+    openssl-dev \
+    cargo && \
   apk add -U --upgrade --no-cache  \
     bash \
     curl \
@@ -23,6 +24,7 @@ RUN \
     build-dependencies && \
   rm -rf \
     /tmp/* \
+    /root/.cargo \
     /root/.cache
 
 COPY root/ /
