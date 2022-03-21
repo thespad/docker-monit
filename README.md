@@ -1,5 +1,7 @@
 # [thespad/monit](https://github.com/thespad/docker-monit)
 
+## THIS IMAGE IS NOW DEPRECATED. Please use [https://github.com/linuxserver-labs/docker-monit](https://github.com/linuxserver-labs/docker-monit) instead
+
 [![GitHub Release](https://img.shields.io/github/release/thespad/docker-monit.svg?color=26689A&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/thespad/docker-monit/releases)
 ![Commits](https://img.shields.io/github/commits-since/thespad/docker-monit/latest?color=26689A&include_prereleases&logo=github&style=for-the-badge)
 ![Image Size](https://img.shields.io/docker/image-size/thespad/monit/latest?color=26689A&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=Size)
